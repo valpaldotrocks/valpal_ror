@@ -5,6 +5,10 @@
     %b.name
       = @pal.name
 
+      - if pal_signed_in?
+        - if current_pal == @pal
+          %a.btn.btn-lg.btn-primary{:href => "/pal/#{current_pal.id}/poster", :role => "button"} Print poster
+
   .form-group{:class => ("hidden" if @pal.email.present?)}
     %label
       Busker email

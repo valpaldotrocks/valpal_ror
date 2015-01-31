@@ -59,7 +59,10 @@
           %p
             Buskers and street performs are struggling as our society goes cashless. Val Pal aims to return Value to buskers who provide you Value.
           %p
-            %a.btn.btn-lg.btn-primary{:href => "/pals/sign_up", :role => "button"} Sign up today
+            - unless pal_signed_in?
+              %a.btn.btn-lg.btn-primary{:href => "/pals/sign_up", :role => "button"} Sign up today
+            - if pal_signed_in?
+              %a.btn.btn-lg.btn-primary{:href => "/#{current_pal.name}", :role => "button"} Your account
             %a.btn.btn-lg.btn-primary{:href => "/amber", :role => "button"} Donate a street performer
 
     -#.item
