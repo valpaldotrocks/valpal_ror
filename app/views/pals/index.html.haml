@@ -1,7 +1,8 @@
 .container{"ng-app" => ""}
   %h1.clearfix
     .header
-      %img{src: "/valpal_logo.jpg", alt: "ValPal logo", height: "120"}
+      %a{:href => "/"}
+        %img{src: "/valpal_logo.jpg", alt: "ValPal logo", height: "120"}
     %b.name
       = @pal.name
 
