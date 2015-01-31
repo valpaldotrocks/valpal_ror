@@ -14,6 +14,10 @@ class PalsController < ApplicationController
 
   end
 
+  def explore
+
+  end
+
   def poster
     @pal = Pal.find(params[:id])
   end

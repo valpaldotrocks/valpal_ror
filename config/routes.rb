@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   }
 
 
+  get 'pal/explore' => 'pals#explore'
   get 'pal/:id' => 'pals#index'
   get 'pal/:id/poster' => 'pals#poster'
 
