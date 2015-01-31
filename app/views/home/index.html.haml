@@ -1,7 +1,10 @@
 .container{"ng-app" => ""}
   %h1 ValPal
 
-  %input{"type" => "text", "ng-model" => "pal_email"}
+  .form-group
+    %label
+      Busker email
+    %input.form-control{"type" => "text", "ng-model" => "pal_email", "placeholder" => "email@example.org"}
 
   .row
     .col-xs-6
