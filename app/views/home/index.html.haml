@@ -1,7 +1,14 @@
-%h1 ValPal
+.container
+  %h1 ValPal
 
-= render partial: "pay_form", locals: { value_text: 'smile', amount: '2.00' } 
-= render partial: "pay_form", locals: { value_text: 'laugh', amount: '5.00' }  
-= render partial: "pay_form", locals: { value_text: 'thought', amount: '10.00' }  
-= render partial: "pay_form", locals: { value_text: 'stock tip', amount: '25.00' }  
+  .row
+    .col-xs-6
+      = render partial: "pay_form", locals: { value_text: 'smile', amount: '2.00' }
+    .col-xs-6
+      = render partial: "pay_form", locals: { value_text: 'laugh', amount: '5.00' }
+  .row
+    .col-xs-6
+      = render partial: "pay_form", locals: { value_text: 'thought', amount: '10.00' }
+    .col-xs-6
+      = render partial: "pay_form", locals: { value_text: 'stock tip', amount: '25.00' }
 

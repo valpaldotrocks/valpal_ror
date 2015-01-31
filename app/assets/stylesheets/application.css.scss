@@ -17,6 +17,10 @@
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap-sprockets";
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap";
 
+.btn-value {
+  height: 200px;
+  margin-bottom: 15px;
+}
 /* Large desktop */
 @media (min-width: 1200px) { }
 
