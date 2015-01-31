@@ -12,8 +12,8 @@
 
   .form-group{:class => ("hidden" if @pal.email.present?)}
     %label
-      Busker email
-    %input.form-control{"type" => "text", "ng-model" => (@pal.email.present? ? "pal_email='#{@pal.email}'" : "pal_email"), "placeholder" => "email@example.org"}
+      Busker email {{pal_email}}
+    %input.form-control{"type" => "text", "ng-model" => "pal_email", "placeholder" => "email@example.org"}
   .row{"ng-cloak" => ""}
     .col-xs-12.col-md-6
       .row

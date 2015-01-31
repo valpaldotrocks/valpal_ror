@@ -1,6 +1,6 @@
 %form{:action => "https://#{@paypal_endpoint}/cgi-bin/webscr", :method => "post", :target => "_top"}
   %input{:name => "cmd", :type => "hidden", :value => "_xclick"}/
-  %input{:name => "business", :type => "hidden",  "value"=>"{{pal_email}}" }/
+  %input{:name => "business", :type => "hidden",  "value"=> (@pal.email.present? ? @pal.email : "{{pal_email}}" ) }/
   %input{:name => "lc", :type => "hidden", :value => "AU"}/
   %input{:name => "item_name", :type => "hidden", :value => value_text }/
   %input{:name => "amount", :type => "hidden", :value => amount}/
