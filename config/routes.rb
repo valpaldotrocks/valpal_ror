@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   get 'pal/:id' => 'home#index'
 
+  get '/:pal_name' => 'home#index'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
