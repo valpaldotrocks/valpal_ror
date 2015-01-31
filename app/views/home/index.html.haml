@@ -1,37 +1,144 @@
-.container{"ng-app" => ""}
-  %h1.clearfix
-    .header
-      %img{src: "/valpal_logo.jpg", alt: "ValPal logo", height: "120"}
-    %b.name
-      = @pal.name
+.navbar-wrapper
+  .container
+    %nav.navbar.navbar-inverse.navbar-static-top
+      .container
+        .navbar-header
+          %button.navbar-toggle.collapsed{"aria-controls" => "navbar", "aria-expanded" => "false", "data-target" => "#navbar", "data-toggle" => "collapse", :type => "button"}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand{:href => "#"} Val Pal
+        #navbar.navbar-collapse.collapse
+          %ul.nav.navbar-nav
+            %li.active
+              %a{:href => "#"} Home
+            -#%li
+            -#  %a{:href => "#about"} About
+            -#%li
+            -#  %a{:href => "#contact"} Contact
+            -#%li.dropdown
+            -#  %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+            -#    Dropdown
+            -#    %span.caret
+            -#  %ul.dropdown-menu{:role => "menu"}
+            -#    %li
+            -#      %a{:href => "#"} Action
+            -#    %li
+            -#      %a{:href => "#"} Another action
+            -#    %li
+            -#      %a{:href => "#"} Something else here
+            -#    %li.divider
+            -#    %li.dropdown-header Nav header
+            -#    %li
+            -#      %a{:href => "#"} Separated link
+            -#    %li
+            -#      %a{:href => "#"} One more separated link
+/
+  Carousel
+  \==================================================
+#myCarousel.carousel.slide{"data-ride" => "carousel"}
+  / Indicators
+  %ol.carousel-indicators
+    -#%li.active{"data-slide-to" => "0", "data-target" => "#myCarousel"}
+    -#%li{"data-slide-to" => "1", "data-target" => "#myCarousel"}
+    -#%li{"data-slide-to" => "2", "data-target" => "#myCarousel"}
+  .carousel-inner{:role => "listbox"}
+    .item.active
+      %img{:alt => "First slide", :src => "data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="}/
+      .container
+        .carousel-caption
+          %h1 Val Pal . Rocks
 
-  .form-group{:class => ("hidden" if @pal.email.present?)}
-    %label
-      Busker email
-    %input.form-control{"type" => "text", "ng-model" => (@pal.email.present? ? "pal_email='#{@pal.email}'" : "pal_email"), "placeholder" => "email@example.org"}
+          %p
+            Buskers and street performs are struggling as our society goes cashless. Val Pal aims to return Value to buskers who provide you Value.
+          %p
+            %a.btn.btn-lg.btn-primary{:href => "#", :role => "button"} Sign up today
+            %a.btn.btn-lg.btn-primary{:href => "/amber", :role => "button"} Donate a street performer
+
+    -#.item
+    -#  %img{:alt => "Second slide", :src => "data:image/gif;base64,R0lGODlhAQABAIAAAGZmZgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="}/
+    -#  .container
+    -#    .carousel-caption
+    -#      %h1 Another example headline.
+    -#      %p Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+    -#      %p
+    -#        %a.btn.btn-lg.btn-primary{:href => "#", :role => "button"} Learn more
+    -#.item
+    -#  %img{:alt => "Third slide", :src => "data:image/gif;base64,R0lGODlhAQABAIAAAFVVVQAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="}/
+    -#  .container
+    -#    .carousel-caption
+    -#      %h1 One more for good measure.
+    -#      %p Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+    -#      %p
+    -#        %a.btn.btn-lg.btn-primary{:href => "#", :role => "button"} Browse gallery
+  -#%a.left.carousel-control{"data-slide" => "prev", :href => "#myCarousel", :role => "button"}
+  -#  %span.glyphicon.glyphicon-chevron-left{"aria-hidden" => "true"}
+  -#  %span.sr-only Previous
+  -#%a.right.carousel-control{"data-slide" => "next", :href => "#myCarousel", :role => "button"}
+  -#  %span.glyphicon.glyphicon-chevron-right{"aria-hidden" => "true"}
+  -#  %span.sr-only Next
+/ /.carousel
+/
+  Marketing messaging and featurettes
+  \==================================================
+/ Wrap the rest of the page in another container to center all the content.
+.container.marketing
+  / Three columns of text below the carousel
   .row
-    .col-xs-12.col-md-6
-      .row
-        .col-xs-6
-          = render partial: "pay_form", locals: { value_text: 'smile', amount: '2.00' }
-        .col-xs-6
-          = render partial: "pay_form", locals: { value_text: 'lol', amount: '5.00' }
-      .row
-        .col-xs-6
-          = render partial: "pay_form", locals: { value_text: 'photo', amount: '10.00' }
-        .col-xs-6
-          = render partial: "pay_form", locals: { value_text: 'think', amount: '25.00' }
-    .col-xs-12.col-md-6
-      %i.blurb-text
-        %p
-          Buskers and street performs are struggling as our society goes cashless.
-          Val Pal aims to return Value to buskers who provide you Value.
-          With Val Pal you can quickly pay a busker who makes you smile ($2),
-          makes you laugh ($5), etc. with any web browsing device.
-        %p
-          You can even track down a busker you saw earlier and only l
-          after that evening or that week you feel that their performance
-          was worth giving back some value for.
+    .col-lg-4
+      %h2 How it works
+      %iframe{:allowfullscreen => "", :frameborder => "0", :height => "315", :src => "https://www.youtube.com/embed/XzWgiTlo8y0?rel=0", :width => "560"}
+      %p It's simple. Don't have any cash on you? Street performer made you smile? Give value for value.
+      %p
+        %a.btn.btn-default{:href => "/dawnroh", :role => "button"} See Dawnroh
+  -#  / /.col-lg-4
+  -#  .col-lg-4
+  -#    %img.img-circle{:alt => "Generic placeholder image", :src => "data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==", :style => "width: 140px; height: 140px;"}/
+  -#    %h2 Heading
+  -#    %p Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
+  -#    %p
+  -#      %a.btn.btn-default{:href => "#", :role => "button"} View details »
+  -#  / /.col-lg-4
+  -#  .col-lg-4
+  -#    %img.img-circle{:alt => "Generic placeholder image", :src => "data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==", :style => "width: 140px; height: 140px;"}/
+  -#    %h2 Heading
+  -#    %p Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+  -#    %p
+  -#      %a.btn.btn-default{:href => "#", :role => "button"} View details »
+  / /.col-lg-4
+  / /.row
+  / START THE FEATURETTES
+  -#%hr.featurette-divider/
+  -#.row.featurette
+  -#  .col-md-7
+  -#    %h2.featurette-heading
+  -#      First featurette heading.
+  -#      %span.text-muted It'll blow your mind.
+  -#    %p.lead Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
+  -#  .col-md-5
+  -#    %img.featurette-image.img-responsive{:alt => "Generic placeholder image", "data-src" => "holder.js/500x500/auto"}/
+  -#%hr.featurette-divider/
+  -#.row.featurette
+  -#  .col-md-5
+  -#    %img.featurette-image.img-responsive{:alt => "Generic placeholder image", "data-src" => "holder.js/500x500/auto"}/
+  -#  .col-md-7
+  -#    %h2.featurette-heading
+  -#      Oh yeah, it's that good.
+  -#      %span.text-muted See for yourself.
+  -#    %p.lead Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
+  -#%hr.featurette-divider/
+  -#.row.featurette
+  -#  .col-md-7
+  -#    %h2.featurette-heading
+  -#      And lastly, this one.
+  -#      %span.text-muted Checkmate.
+  -#    %p.lead Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
+  -#  .col-md-5
+  -#    %img.featurette-image.img-responsive{:alt => "Generic placeholder image", "data-src" => "holder.js/500x500/auto"}/
+  -#%hr.featurette-divider/
+  / /END THE FEATURETTES
+  / FOOTER
   %footer
     %p
       \© 2015 Val Pal

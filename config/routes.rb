@@ -6,10 +6,10 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   root 'home#index'
 
-  get 'pal/:id' => 'home#index'
+  get 'pal/:id' => 'pals#index'
   get 'pal/:id/poster' => 'pals#poster'
 
-  get '/:pal_name' => 'home#index'
+  get '/:pal_name' => 'pals#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -1,0 +1,40 @@
+.container{"ng-app" => ""}
+  %h1.clearfix
+    .header
+      %img{src: "/valpal_logo.jpg", alt: "ValPal logo", height: "120"}
+    %b.name
+      = @pal.name
+
+  .form-group{:class => ("hidden" if @pal.email.present?)}
+    %label
+      Busker email
+    %input.form-control{"type" => "text", "ng-model" => (@pal.email.present? ? "pal_email='#{@pal.email}'" : "pal_email"), "placeholder" => "email@example.org"}
+  .row
+    .col-xs-12.col-md-6
+      .row
+        .col-xs-6
+          = render partial: "pay_form", locals: { value_text: 'smile', amount: '2.00' }
+        .col-xs-6
+          = render partial: "pay_form", locals: { value_text: 'lol', amount: '5.00' }
+      .row
+        .col-xs-6
+          = render partial: "pay_form", locals: { value_text: 'photo', amount: '10.00' }
+        .col-xs-6
+          = render partial: "pay_form", locals: { value_text: 'think', amount: '25.00' }
+    .col-xs-12.col-md-6
+      %i.blurb-text
+        %p
+          Buskers and street performs are struggling as our society goes cashless.
+          Val Pal aims to return Value to buskers who provide you Value.
+          With Val Pal you can quickly pay a busker who makes you smile ($2),
+          makes you laugh ($5), etc. with any web browsing device.
+        %p
+          You can even track down a busker you saw earlier and only l
+          after that evening or that week you feel that their performance
+          was worth giving back some value for.
+  %footer
+    %p
+      \© 2015 Val Pal
+      %a{:href => "https://twitter.com/valpaldotrocks"} Twitter
+      \·
+      %a{:href => "https://www.facebook.com/valpaldotrocks"} Facebook
