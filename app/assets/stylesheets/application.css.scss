@@ -20,11 +20,20 @@
 .btn-value {
   height: 200px;
   margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.btn-text {
+  font-size: 60px;
+  color: #fff;
 }
 
 .poster-text {
   font-size: 60px;
-  text-transform: uppercase;
+}
+
+.blurb-text {
+  font-size: 20px;
 }
 
 .url-text {
@@ -59,10 +68,6 @@
   padding: 45px 0 0 45px;
 }
 
-.btn-text {
-  font-size: 60px;
-  color: #fff;
-}
 /* Large desktop */
 @media (min-width: 1200px) { }
 

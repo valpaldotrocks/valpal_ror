@@ -1,8 +1,8 @@
 .container{"ng-app" => ""}
-  %h1
+  %h1.clearfix
     .header
       %img{src: "/valpal_logo.jpg", alt: "ValPal logo", height: "120"}
-    %b
+    %b.name
       = @pal.name
 
   .form-group{:class => ("hidden" if @pal.email.present?)}
@@ -22,17 +22,16 @@
         .col-xs-6
           = render partial: "pay_form", locals: { value_text: 'think', amount: '25.00' }
     .col-xs-12.col-md-6
-      .poster-text
-        %i
-          %p
-            Buskers and street performs are struggling as our society goes cashless.
-            Val Pal aims to return Value to buskers who provide you Value.
-            With Val Pal you can quickly pay a busker who makes you smile ($2),
-            makes you laugh ($5), etc. with any web browsing device.
-          %p
-            You can even track down a busker you saw earlier and only l
-            after that evening or that week you feel that their performance
-            was worth giving back some value for.
+      %i.blurb-text
+        %p
+          Buskers and street performs are struggling as our society goes cashless.
+          Val Pal aims to return Value to buskers who provide you Value.
+          With Val Pal you can quickly pay a busker who makes you smile ($2),
+          makes you laugh ($5), etc. with any web browsing device.
+        %p
+          You can even track down a busker you saw earlier and only l
+          after that evening or that week you feel that their performance
+          was worth giving back some value for.
   %footer
     %p
       \© 2015 Val Pal
