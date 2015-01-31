@@ -1,11 +1,7 @@
 %h1 ValPal
 
-%form
-  %button.btn.btn-primary
-    smile
-  %button.btn.btn-primary
-    laugh
-  %button.btn.btn-primary
-    thought
-  %button.btn.btn-primary
-    stock tip
+= render partial: "pay_form", locals: { value_text: 'smile' } 
+= render partial: "pay_form", locals: { value_text: 'laugh' }  
+= render partial: "pay_form", locals: { value_text: 'thought' }  
+= render partial: "pay_form", locals: { value_text: 'stock tip' }  
+

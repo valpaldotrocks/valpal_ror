@@ -1,0 +1,14 @@
+%form{:action => "https://www.sandbox.paypal.com/cgi-bin/webscr", :method => "post", :target => "_top"}
+  %input{:name => "cmd", :type => "hidden", :value => "_xclick"}/
+  %input{:name => "business", :type => "hidden", :value => "valpal@mate.au"}/
+  %input{:name => "lc", :type => "hidden", :value => "AU"}/
+  %input{:name => "item_name", :type => "hidden", :value => value_text }/
+  %input{:name => "amount", :type => "hidden", :value => "12.00"}/
+  %input{:name => "currency_code", :type => "hidden", :value => "AUD"}/
+  %input{:name => "button_subtype", :type => "hidden", :value => "services"}/
+  %input{:name => "no_note", :type => "hidden", :value => "0"}/
+  %input{:name => "shipping", :type => "hidden", :value => "0.00"}/
+  %input{:name => "bn", :type => "hidden", :value => "PP-BuyNowBF:btn_buynowCC_LG.gif:NonHostedGuest"}/
+  %input.button.btn.btn-primary{:alt => "PayPal — The safer, easier way to pay online.", :border => "0", :name => "submit", :type=>"Submit", :value=> value_text }
+
+  %img{:alt => "", :border => "0", :height => "1", :src => "https://www.paypalobjects.com/en_AU/i/scr/pixel.gif", :width => "1"}/
