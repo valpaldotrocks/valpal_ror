@@ -128,6 +128,8 @@
         %a.a-unstyled{name: "explore"}
           Explore pals
       %p
+        - @pals.each do |pal|
+          .pal.hidden{data: {name: pal.name, lat: pal.latitude, long: pal.longitude }}
         #map-canvas
 
   -#.row.featurette
@@ -162,6 +164,9 @@
   :javascript
 
     $(function(){
+
+       console.log($('.pal'));
+
        function initialize() {
         var mapOptions = {
           center: { lat: -37.8148912, lng: 144.966761},
