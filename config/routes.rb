@@ -12,8 +12,6 @@ Rails.application.routes.draw do
       registrations: 'pals/registrations'
   }
 
-
-  get 'pal/explore' => 'pals#explore'
   get 'pal/:id' => 'pals#index'
   get 'pal/:id/poster' => 'pals#poster'
 
