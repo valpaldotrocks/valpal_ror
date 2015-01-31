@@ -1,14 +1,13 @@
 .container{"ng-app" => ""}
-  %h1.clearfix
-    .header
-      %a{:href => "/"}
-        %img{src: "/valpal_logo.jpg", alt: "ValPal logo", height: "120"}
-    %b.name
-      = @pal.name
+  .header
+    %img{src: @pal.avatar.url, height: '80', class: 'pal-image'}
+    %h1
+      %b.name
+        = @pal.name
 
-      - if pal_signed_in?
-        - if current_pal == @pal
-          %a.btn.btn-lg.btn-primary{:href => "/pal/#{current_pal.id}/poster", :role => "button"} Print poster
+        - if pal_signed_in?
+          - if current_pal == @pal
+            %a.btn.btn-lg.btn-primary{:href => "/pal/#{current_pal.id}/poster", :role => "button"} Print poster
 
   .form-group{:class => ("hidden" if @pal.email.present?)}
     %label

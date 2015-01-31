@@ -60,12 +60,17 @@
 }
 
 .header {
+  @include clearfix;
+  margin-bottom: 15px;
+}
+.pal-image {
   float: left;
+  margin: 5px;
 }
 
 .name {
   float: left;
-  padding: 45px 0 0 45px;
+  padding: 0 0 0 45px;
 }
 
 #map-canvas {
