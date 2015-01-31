@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150131055426) do
+ActiveRecord::Schema.define(version: 20150131062207) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,5 +22,7 @@ ActiveRecord::Schema.define(version: 20150131055426) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "pals", ["name"], name: "index_pals_on_name", unique: true, using: :btree
 
 end
