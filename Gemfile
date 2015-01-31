@@ -25,6 +25,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'bower-rails'
 gem 'haml'
+
+gem 'newrelic_rpm', :group => :production
+gem 'rollbar', :group => :production
+gem 'puma'
+
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
