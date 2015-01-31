@@ -73,6 +73,12 @@
   height: 600px;
 }
 
+.a-unstyled { color: #333; }
+.a-unstyled:link { color: #333; }
+.a-unstyled:visited { color: #333; }
+.a-unstyled:hover { color: #000; }
+.a-unstyled:active { color: #333; }
+
 /* Large desktop */
 @media (min-width: 1200px) { }
 
