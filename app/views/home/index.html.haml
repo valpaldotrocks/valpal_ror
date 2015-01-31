@@ -1,9 +1,9 @@
 .container{"ng-app" => ""}
-  %h1 ValPal
+  %h1 
+    ValPal
+    = @pal.name
 
-
-
-  .form-group
+  .form-group{:class => ("hidden" if @pal.email.present?)}
     %label
       Busker email
     %input.form-control{"type" => "text", "ng-model" => "pal_email='#{@pal.email}'", "placeholder" => "email@example.org"}

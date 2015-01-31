@@ -1,4 +1,4 @@
-%form{:action => "https://www.sandbox.paypal.com/cgi-bin/webscr", :method => "post", :target => "_top"}
+%form{:action => "https://#{@paypal_endpoint}/cgi-bin/webscr", :method => "post", :target => "_top"}
   %input{:name => "cmd", :type => "hidden", :value => "_xclick"}/
   %input{:name => "business", :type => "hidden",  "value"=>"{{pal_email}}" }/
   %input{:name => "lc", :type => "hidden", :value => "AU"}/
