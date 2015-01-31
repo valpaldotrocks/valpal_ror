@@ -3,6 +3,11 @@ class AdminController < ApplicationController
   before_filter :authenticate_pal!
   before_filter :only_admin!
 
+  def index
+    @pals = Pal.all
+
+  end
+
   def edit_pal
     @pal = Pal.find(params[:id])
   end

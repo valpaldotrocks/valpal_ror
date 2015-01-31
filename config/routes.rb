@@ -16,10 +16,12 @@ Rails.application.routes.draw do
   get 'pal/:id' => 'pals#index'
   get 'pal/:id/poster' => 'pals#poster'
 
-  get '/:pal_name' => 'pals#index'
 
+  get 'admin'  => 'admin#index'
   get 'admin/pal/:id'  => 'admin#edit_pal', as: 'admin_pal'
   put 'admin/pal/:id'  => 'admin#update_pal'
+
+  get '/:pal_name' => 'pals#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

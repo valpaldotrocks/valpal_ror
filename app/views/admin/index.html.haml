@@ -1,0 +1,6 @@
+- @pals.each do |pal|
+  %p
+    %a{:href => "/admin/pal/#{pal.id}"}
+      = pal.id
+      = pal.name
+      = pal.email
