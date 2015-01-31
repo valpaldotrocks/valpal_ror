@@ -29,6 +29,8 @@ gem 'rollbar', :group => :production
 gem 'puma'
 gem 'devise'
 
+gem 'carrierwave'
+gem 'fog'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

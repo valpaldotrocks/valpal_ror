@@ -19,5 +19,12 @@
     = f.label :name
     %br/
     = f.text_field :name
+  .field
+    = f.label :avatar
+
+    - if f.object.avatar.url
+      %img{src: f.object.avatar.url}
+    - else
+    = f.file_field :avatar
   .actions
     = f.submit "Update"

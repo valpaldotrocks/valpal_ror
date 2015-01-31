@@ -16,6 +16,13 @@ class AdminController < ApplicationController
     @person = Pal.find(params[:id])
     @person.update(pal_params)
 
+    @person.avatar = params[:avatar] # Assign a file like this, or
+    # u.avatar = File.open('somewhere') # like this
+    @person.save!
+    # u.avatar.url # => '/url/to/file.png'
+    # u.avatar.current_path # => 'path/to/file.png'
+    # u.avatar.identifier # => 'file.png'
+
     redirect_to :action => 'edit_pal'
   end
 
@@ -23,7 +30,7 @@ class AdminController < ApplicationController
   private
 
   def pal_params
-    params.require(:pal).permit(:email, :name)
+    params.require(:pal).permit(:email, :name, :avatar)
   end
 
   def only_admin!

@@ -7,6 +7,8 @@ class Pal < ActiveRecord::Base
 
   validates :name, presence: true, uniqueness: true
 
+  mount_uploader :avatar, AvatarUploader
+
   def encoded_url
     "http://valpal.rocks/pal/#{id}"
   end
