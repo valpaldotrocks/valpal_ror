@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   get '/:pal_name' => 'pals#index'
 
+  get 'admin/pal/:id'  => 'admin#edit_pal'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
