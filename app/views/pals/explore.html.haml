@@ -9,11 +9,52 @@ Map test
     $(function(){
        function initialize() {
         var mapOptions = {
-          center: { lat: -37.8142085, lng: 144.9685895},
-          zoom: 15
+          center: { lat: -37.8148912, lng: 144.966761},
+          zoom: 17,
+          styles: [
+        {
+          "featureType": "poi",
+          "elementType": "labels",
+          "stylers": [
+            { "visibility": "off" }
+          ]
+        }
+      ]
+
         };
         var map = new google.maps.Map(document.getElementById('map-canvas'),
             mapOptions);
+
+
+        var myLatlng = new google.maps.LatLng(-37.8141234,144.9638599);
+
+        var contentString = '<div id="content">'+
+        '<div id="siteNotice">'+
+        '</div>'+
+        '<h1 id="firstHeading" class="firstHeading">Amber</h1>'+
+        '<div id="bodyContent">'+
+        '<p><a href="/amber">'+
+        'View profile</a> '+
+        '</div>'+
+        '</div>';
+
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString
+        });
+
+
+
+        var marker = new google.maps.Marker({
+              position: myLatlng,
+              map: map,
+              title:"Hello World!"
+          });
+
+
+        google.maps.event.addListener(marker, 'click', function() {
+          infowindow.open(map,marker);
+        });
+
       }
        google.maps.event.addDomListener(window, 'load', initialize);
     });
