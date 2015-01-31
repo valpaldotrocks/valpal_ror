@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   get 'pal/:id' => 'home#index'
+  get 'pal/:id/poster' => 'pals#poster'
 
   get '/:pal_name' => 'home#index'
 

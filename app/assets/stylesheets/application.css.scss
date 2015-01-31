@@ -21,6 +21,43 @@
   height: 200px;
   margin-bottom: 15px;
 }
+
+.poster-text {
+  font-size: 60px;
+  text-transform: uppercase;
+}
+
+.url-text {
+  font-weight: 600;
+}
+
+.highlight {
+  padding: 9px 14px;
+  background-color: #f7f7f9;
+  border: 1px solid #e1e1e8;
+  border-radius: 4px;
+  .url {
+    float: left;
+    margin-right: 14px;
+  }
+  .empty-box {
+    float: left;
+    background-color: #fff;
+    width: 550px;
+    padding: 9px 14px;
+    border: 1px solid #e1e1e8;
+    border-radius: 4px;
+  }
+}
+
+.header {
+
+}
+
+.btn-text {
+  font-size: 60px;
+  color: #fff;
+}
 /* Large desktop */
 @media (min-width: 1200px) { }
 
