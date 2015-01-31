@@ -129,7 +129,7 @@
           Explore pals
       %p
         - @pals.each do |pal|
-          .pal.hidden{data: {name: pal.name, lat: pal.latitude, long: pal.longitude }}
+          .pal.hidden{data: pal_data(pal) }
         #map-canvas
 
   -#.row.featurette
@@ -194,7 +194,7 @@
           var myLatlng = new google.maps.LatLng(p.data('lat'),p.data('long'));
 
         var contentString = '<div id="content">'+
-        '<img height="50" src="/uploads/pal/avatar/13/vp.png">'+
+        '<img height="50" src="'+p.data('url')+'">'+
         '<h1 id="firstHeading" class="firstHeading">'+p.data('name')+'</h1>'+
         '<div id="bodyContent">'+
         '<p><a href="/'+p.data('name')+'">'+
