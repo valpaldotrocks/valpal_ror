@@ -33,6 +33,9 @@
               %li
                 %a{:href => "/pals/sign_in"} Sign in
             - if pal_signed_in?
+              - if current_pal.admin
+                %li
+                  = link_to "admin", '/admin'
               %li
                 = link_to "Sign out (#{current_pal.name})", destroy_pal_session_path, :method => :delete
             -#    %li.dropdown-header Nav header

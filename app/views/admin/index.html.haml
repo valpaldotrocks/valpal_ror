@@ -1,6 +1,22 @@
-- @pals.each do |pal|
-  %p
-    %a{:href => "/admin/pal/#{pal.id}"}
-      = pal.id
-      = pal.name
-      = pal.email
+.container
+  %h1 Admin
+  %table.table.table-striped.table-responsive
+    %thead
+      %tr
+        %th ID
+        %th Name
+        %th email
+        %th avatar
+    %tbody
+      - @pals.each do |pal|
+        %tr
+          %td
+            %a{:href => "/admin/pal/#{pal.id}"}
+              = pal.id
+          %td
+            = pal.name
+          %td
+            = pal.email
+          %td
+            - if pal.avatar.url
+              %img{src: pal.avatar.url, height: 50}
