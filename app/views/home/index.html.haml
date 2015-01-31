@@ -1,5 +1,7 @@
-.container
+.container{"ng-app" => ""}
   %h1 ValPal
+
+  %input{"type" => "text", "ng-model" => "pal_email"}
 
   .row
     .col-xs-6
@@ -11,4 +13,3 @@
       = render partial: "pay_form", locals: { value_text: 'thought', amount: '10.00' }
     .col-xs-6
       = render partial: "pay_form", locals: { value_text: 'stock tip', amount: '25.00' }
-
