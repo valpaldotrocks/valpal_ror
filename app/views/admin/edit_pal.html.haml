@@ -1,1 +1,23 @@
-Test
+%h1 Admin panel
+
+%p
+  id:
+  = @pal.id
+%p
+  name:
+  = @pal.name
+%p
+  email:
+  = @pal.email
+
+= form_for(@pal, as: @pal, url: admin_pal_path(@pal), html: { method: :put }) do |f|
+  .field
+    = f.label :email
+    %br/
+    = f.email_field :email, autofocus: true
+  .field
+    = f.label :name
+    %br/
+    = f.text_field :name
+  .actions
+    = f.submit "Update"
