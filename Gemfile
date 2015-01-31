@@ -29,6 +29,7 @@ gem 'haml'
 gem 'newrelic_rpm', :group => :production
 gem 'rollbar', :group => :production
 gem 'puma'
+gem 'devise'
 
 
 # Use ActiveModel has_secure_password

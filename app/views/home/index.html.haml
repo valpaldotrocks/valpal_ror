@@ -28,7 +28,13 @@
             -#      %a{:href => "#"} Another action
             -#    %li
             -#      %a{:href => "#"} Something else here
-            -#    %li.divider
+            %li.divider
+            - unless pal_signed_in?
+              %li
+                %a{:href => "/pals/sign_in"} Sign in
+            - if pal_signed_in?
+              %li
+                = link_to "Sign out (#{current_pal.name})", destroy_pal_session_path, :method => :delete
             -#    %li.dropdown-header Nav header
             -#    %li
             -#      %a{:href => "#"} Separated link
@@ -53,7 +59,7 @@
           %p
             Buskers and street performs are struggling as our society goes cashless. Val Pal aims to return Value to buskers who provide you Value.
           %p
-            %a.btn.btn-lg.btn-primary{:href => "#", :role => "button"} Sign up today
+            %a.btn.btn-lg.btn-primary{:href => "/pals/sign_up", :role => "button"} Sign up today
             %a.btn.btn-lg.btn-primary{:href => "/amber", :role => "button"} Donate a street performer
 
     -#.item
