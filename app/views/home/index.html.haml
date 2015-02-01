@@ -106,8 +106,9 @@
         %a.btn.btn-default{:href => "/dawnroh", :role => "button"} See Dawnroh »
     / /.col-lg-4
     .col-lg-4
-      %h2 Are street performer?
-      %p Create account and start receiving payments via paypal.
+      %h2 You a street performer?
+      %p
+        Create an account and start receiving payments via PayPal. All we need to get started is an email address.
       %p
         - unless pal_signed_in?
           %a.btn.btn-default{:href => "/pals/sign_up", :role => "button"} Sign up »
@@ -115,7 +116,7 @@
           %a.btn.btn-default{:href => "/#{current_pal.name}", :role => "button"} Your account
     / /.col-lg-4
     .col-lg-4
-      %h2 Enjoyed show?
+      %h2 Enjoyed a show?
       %p Find a pal that gave you value and give something back.
       %p
         %a.btn.btn-default{:href => "#explore", :role => "button"} Find pal »
