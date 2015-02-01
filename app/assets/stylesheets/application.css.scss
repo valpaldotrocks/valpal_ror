@@ -78,6 +78,10 @@
   height: 600px;
 }
 
+.shadowed {
+  text-shadow: black 0.1em 0.1em 0.2em;
+}
+
 .a-unstyled { color: #333; }
 .a-unstyled:link { color: #333; }
 .a-unstyled:visited { color: #333; }
