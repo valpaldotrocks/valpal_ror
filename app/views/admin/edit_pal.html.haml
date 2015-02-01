@@ -1,58 +1,61 @@
-%h1 Admin panel
+.container
+  = link_to 'home', '/'
 
-%p
-  id:
-  = @pal.id
-%p
-  name:
-  = @pal.name
-%p
-  email:
-  = @pal.email
+  %h1 Admin panel
 
-%p
-  %button#locateme
-    Locate
-= form_for(@pal, as: @pal, url: admin_pal_path(@pal), html: { method: :put }) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true
-  .field
-    = f.label :name
-    %br/
-    = f.text_field :name
-  .field
-    = f.label :latitude
-    %br/
-    = f.text_field :latitude
-  .field
-    = f.label :longitude
-    %br/
-    = f.text_field :longitude
-  .field
-    = f.label :avatar
+  %p
+    id:
+    = @pal.id
+  %p
+    name:
+    = @pal.name
+  %p
+    email:
+    = @pal.email
 
-    - if f.object.avatar.url
-      %img{src: f.object.avatar.url}
-    - else
-    = f.file_field :avatar
-  .actions
-    = f.submit "Update"
+  %p
+    %button#locateme
+      Locate
+  = form_for(@pal, as: @pal, url: admin_pal_path(@pal), html: { method: :put }) do |f|
+    .field
+      = f.label :email
+      %br/
+      = f.email_field :email, autofocus: true
+    .field
+      = f.label :name
+      %br/
+      = f.text_field :name
+    .field
+      = f.label :latitude
+      %br/
+      = f.text_field :latitude
+    .field
+      = f.label :longitude
+      %br/
+      = f.text_field :longitude
+    .field
+      = f.label :avatar
 
-  - content_for :javascript do
-    :javascript
+      - if f.object.avatar.url
+        %img{src: f.object.avatar.url}
+      - else
+      = f.file_field :avatar
+    .actions
+      = f.submit "Update"
 
-      $(function(){
-        $('#locateme').click(function() {
-          if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition( function(position) {
-              $('#pal_latitude').val(position.coords.latitude);
-              $('#pal_longitude').val(position.coords.longitude);
+    - content_for :javascript do
+      :javascript
 
-            }
+        $(function(){
+          $('#locateme').click(function() {
+            if (navigator.geolocation) {
+              navigator.geolocation.getCurrentPosition( function(position) {
+                $('#pal_latitude').val(position.coords.latitude);
+                $('#pal_longitude').val(position.coords.longitude);
 
-          );
-        }});
+              }
 
-      });
+            );
+          }});
+
+        });
