@@ -30,7 +30,7 @@ class AdminController < ApplicationController
   private
 
   def pal_params
-    params.require(:pal).permit(:email, :name, :avatar)
+    params.require(:pal).permit(:email, :name, :avatar, :longitude, :latitude)
   end
 
   def only_admin!

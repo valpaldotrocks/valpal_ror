@@ -10,6 +10,9 @@
   email:
   = @pal.email
 
+%p
+  %button#locateme
+    Locate
 = form_for(@pal, as: @pal, url: admin_pal_path(@pal), html: { method: :put }) do |f|
   .field
     = f.label :email
@@ -20,6 +23,14 @@
     %br/
     = f.text_field :name
   .field
+    = f.label :latitude
+    %br/
+    = f.text_field :latitude
+  .field
+    = f.label :longitude
+    %br/
+    = f.text_field :longitude
+  .field
     = f.label :avatar
 
     - if f.object.avatar.url
@@ -28,3 +39,20 @@
     = f.file_field :avatar
   .actions
     = f.submit "Update"
+
+  - content_for :javascript do
+    :javascript
+
+      $(function(){
+        $('#locateme').click(function() {
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition( function(position) {
+              $('#pal_latitude').val(position.coords.latitude);
+              $('#pal_longitude').val(position.coords.longitude);
+
+            }
+
+          );
+        }});
+
+      });
